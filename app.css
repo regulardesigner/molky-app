@@ -1,9 +1,14 @@
 * {
     font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+}
+
+body {
+    background-color: lightpink;
 }
 
 h1 {
-    color: gray;
+    color: grey;
 }
 
 .show{

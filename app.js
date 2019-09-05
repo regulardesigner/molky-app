@@ -33,6 +33,8 @@ btnStart.addEventListener('click', function(event){
     event.preventDefault()
 });
 
+
+
 let addPlayer = playerName => {
     console.log( 'New Player: ' + playerName );
     // show the new player name in the player list (ol>li)
