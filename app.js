@@ -7,12 +7,17 @@ let playerform = document.forms.player,
     btnStart = playerform.elements.start;
 
 let playerList = document.querySelector('#player-list');
+// store the new player :name and :score in an object
+let newPlayer = {};
+// store players object in an array
 let playerArray = [];
 
 btnAddPlayer.addEventListener('click', function(event){
     if(playerNameInput.value !== ""){
         addPlayer(playerNameInput.value);
         playerNameInput.value = "";
+    } else{
+        alert("Please add the name of the next player.");
     }
     // prevent default behavior to send data to a server.
     event.preventDefault()
@@ -23,10 +28,11 @@ btnStart.addEventListener('click', function(event){
     event.preventDefault()
 });
 
-let addPlayer = player => {
-    console.log( 'New Player: ' + player );
-    playerList.innerHTML += `<li>${player}</li>`
-    playerArray.push(player);
+let addPlayer = playerName => {
+    console.log( 'New Player: ' + playerName );
+    playerList.innerHTML += `<li>${playerName}</li>`
+    newPlayer = {name: playerName, score: 0}
+    playerArray.push(newPlayer);
 };
 
 let startGame = () => {

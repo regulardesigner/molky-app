@@ -9,16 +9,19 @@
 </head>
 <body>
     <h1>${app-title}</h1>
-    <section id="add-players">
+    <section id="add-players" class="show">
         <ol id="player-list"></ol>
         <form name="player">
             <input name="name" type="text" placeholder="New player name">
-            <input name="add" type="button" value="Add this player">
+            <input name="add" type="submit" value="Add this player">
             <input name="start" type="submit" value="Start the game">
         </form>
     </section>
     <section id="turns" class="hide">
-        player turn
+        <h2>Next Player: </h2>
+        <form name="turn">
+            <input type="button" value="Next Player">
+        </form>
     </section>
     <section id="winner" class="hide">
         the winner section & end of the game
