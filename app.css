@@ -1,0 +1,15 @@
+* {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+h1 {
+    color: red;
+}
+
+.show{
+    display: block;
+}
+
+.hide{
+    display: none;
+}
