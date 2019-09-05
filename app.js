@@ -24,19 +24,40 @@ btnAddPlayer.addEventListener('click', function(event){
 });
 
 btnStart.addEventListener('click', function(event){
-    startGame();
+    // trigger the startGame function if two players are stored in the playerArray
+    if(playerArray.length > 1){
+        startGame();
+    }else{
+        alert('You need to be at least two players to play Molky. \nPlease add your players name.')
+    }
     event.preventDefault()
 });
 
 let addPlayer = playerName => {
     console.log( 'New Player: ' + playerName );
+    // show the new player name in the player list (ol>li)
     playerList.innerHTML += `<li>${playerName}</li>`
+    // create a newPlayer object with the name of the new player and his initial score
     newPlayer = {name: playerName, score: 0}
+    // push the newPlayer object into the playerArray
     playerArray.push(newPlayer);
 };
 
 let startGame = () => {
     console.log('start - Molky');
+
+    let hidePlayerSection = document.querySelector('#add-players');
+        hidePlayerSection.classList.add('hide');
+
+    let showTurnsSection = document.querySelector('#turns');
+        showTurnsSection.classList.toggle('hide');
+
+    let titleSection = document.querySelector('#turns h2');
+        titleSection.innerHTML = `${playerArray[0].name}, are you ready to start?`;
+};
+
+let nextTurn = count => {
+    
 };
 
 let endGame = () => {
