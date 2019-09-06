@@ -33,7 +33,12 @@ btnStart.addEventListener('click', function(event){
     event.preventDefault()
 });
 
+let nextPlayerForm = document.forms.turn;
+let btnNextPlayer = nextPlayerForm.elements.next;
 
+btnNextPlayer.addEventListener('click', function(event){
+    nextTurn();
+});
 
 let addPlayer = playerName => {
     console.log( 'New Player: ' + playerName );
@@ -59,7 +64,7 @@ let startGame = () => {
 };
 
 let nextTurn = count => {
-    
+    console.log('Next -> player');
 };
 
 let endGame = () => {
